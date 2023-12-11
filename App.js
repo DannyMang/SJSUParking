@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// App.js
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import TopBanner from './components/TopBanner.js'
+import BottomButton from './components/BottomButton.js';
 
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <TopBanner title="SJSU Parking" />
+      <View style={styles.content}>
+        {/* Your main content goes here */}
+        <Text>Content goes here</Text>
+      </View>
+      <BottomButton label="Button Placeholder" onPress={() => console.log('Button pressed')} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+  },
+  content: {
+    flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
   },
 });
+
+export default App;
