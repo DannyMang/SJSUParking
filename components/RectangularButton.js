@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import {Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 const RectangularButton = ({onPress, title }) => {
     return (
-        <TouchableOpacity onPress={onPress}
-        style={styles.buttonContainer}> 
+        <TouchableOpacity style={styles.buttonContainer} onPress={onPress}> 
             <Text style={styles.buttonText}>{title}</Text>
         </TouchableOpacity>
     );
@@ -13,14 +12,16 @@ const RectangularButton = ({onPress, title }) => {
 const styles = StyleSheet.create({
     buttonContainer: {
         backgroundColor: '#3498db',
-        paddingVertical: 15,
-        paddingHorizontal: 20,
-        borderRadius: 5,
+        paddingVertical: 20,
+        paddingHorizontal: 7,
+        borderColor: '#001F3F',
+        borderWidth: 2,
+        
     },
     buttonText: {
         color: '#fff',
         fontSize: 16,
-        textAlign: 'center',
+        textAlign: 'left',
     },
 });
 
