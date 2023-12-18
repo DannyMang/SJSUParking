@@ -13,12 +13,14 @@ const TopBanner = ({ title }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#3498db',
-    paddingTop: 60,
+    paddingTop: 20,
     alignItems: 'center',
   },
   title: {
     color: 'white',
     fontSize: 20,
+    padding: 10,
+    textAlignVertical: 'center',
   },
 });
 

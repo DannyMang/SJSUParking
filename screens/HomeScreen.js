@@ -8,12 +8,11 @@ export default function HomeScreen({navigation}) {
         <View style={styles.container}>
         <TopBanner title="SJSU Parking" />
         <View style={styles.content}>
-          <ProgressBar label="West" initialProgress={0.3} />
+          <ProgressBar label="West" initialProgress={0.1} />
           <ProgressBar label="South" initialProgress={0.0} />
-          <ProgressBar label="North" initialProgress={0.1} />
+          <ProgressBar label="North" initialProgress={0.8} />
           <ProgressBar label="South Campus" initialProgress={0.5} />
         </View>
-        <BottomButton label="Settings" onPress={() => navigation.navigate("Settings")} />
       </View>
     );
 
