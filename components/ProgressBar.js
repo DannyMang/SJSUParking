@@ -5,10 +5,6 @@ import * as Progress from 'react-native-progress';
 const ProgressBar = ({ label, initialProgress }) => {
   const [progress, setProgress] = useState(initialProgress || 0);
 
-  useEffect(() => {
-    // update from the website here
-  }, []); 
-
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
