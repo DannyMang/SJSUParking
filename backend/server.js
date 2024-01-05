@@ -43,7 +43,7 @@ async function updateParkingData() {
 // Fetch parking data initially and update it every 5 minutes
 //Adjust this later, when it fetches data the 2nd time  it will mess up the app home screen because there are
 //8 instances instead of 4, and etc everytime it refreshes 
-//updateParkingData();
+updateParkingData();
 ///setInterval(updateParkingData, 5 * 60 * 1000);
 
 app.get('/', (req, res) => {
