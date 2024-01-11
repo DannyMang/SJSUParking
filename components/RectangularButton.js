@@ -11,12 +11,11 @@ const RectangularButton = ({onPress, title }) => {
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        backgroundColor: '#3498db',
+        backgroundColor: '#0055A2',
         paddingVertical: 20,
         paddingHorizontal: 7,
         borderColor: '#001F3F',
-        borderWidth: 2,
-        
+        borderWidth: 1,
     },
     buttonText: {
         color: '#fff',
