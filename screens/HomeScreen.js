@@ -4,20 +4,19 @@ import TopBanner from '../components/TopBanner';
 import ProgressBar from '../components/ProgressBar';
 import openMap, { createOpenLink } from 'react-native-open-maps';
 
+// react native open map coordinates and search queries for garages
 const southGarage = { provider:'apple', query:'SJSU South Garage', latitude: 37.333258, longitude: -121.880903};
 const westGarage = { provider:'apple', query:'SJSU West Garage', latitude: 37.332394, longitude: -121.883009};
 const northGarage = { provider:'apple', query:'SJSU North Garage', latitude: 37.339353, longitude: -121.880779};
 const southCampusGarage = { provider:'apple', query:'SJSU South Campus Garage', latitude: 37.320667, longitude: -121.865401};
 
+// functions to open link to specific garages
 const onPressFunction = [
   createOpenLink(southGarage),
   createOpenLink(westGarage),
   createOpenLink(northGarage),
   createOpenLink(southCampusGarage),
 ];
-
-const openGarage = createOpenLink(westGarage);
-
 
 const HomeScreen = () => {
   const [parkingData, setParkingData] = useState([]);
