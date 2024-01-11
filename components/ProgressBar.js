@@ -18,7 +18,7 @@ const ProgressBar = ({ label, initialProgress, onPressData }) => {
       </TouchableOpacity>
       </View>
       <View style={styles.progressBarContainer}>
-        <Progress.Bar progress={progress} width={300} height={30} borderRadius={30}/>
+        <Progress.Bar color='#0055A2' progress={progress} width={300} height={30} borderRadius={5}/>
         <Text style={styles.percentageText}>{`${Math.round(progress * 100)}%`}</Text>
       </View>
     </View>
@@ -28,7 +28,7 @@ const ProgressBar = ({ label, initialProgress, onPressData }) => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    marginTop: 20,
+    margin: 20,
     
   },
   titleContainer: {
@@ -41,14 +41,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
+   
   },
   progressBarContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    
   },
   percentageText: {
     marginLeft: 10,
-    fontSize: 16,
+    fontSize: 18,
   },
  
 });
