@@ -8,6 +8,9 @@ import AppearancePage from './screens/AppearancePage.js';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Entypo } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+
 
 const Tab = createBottomTabNavigator(); //bottom tab object
 const SettingsStack = createNativeStackNavigator();
@@ -15,8 +18,28 @@ const SettingsStack = createNativeStackNavigator();
 function TabNavigator() { //navigator function for Home and Settings tabs
   return (
     <Tab.Navigator initialRouteName="Home">
-        <Tab.Screen name ="Home" component={HomeScreen}/>
-        <Tab.Screen name="Settings" component={SettingsNavigator} />
+        <Tab.Screen 
+          name ="Home" 
+          component={HomeScreen}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: () => (
+              <Entypo name="home" size={24} color='#53565A' />
+            ),
+            showIcon: true
+          }}
+        />
+        <Tab.Screen 
+          name="Settings" 
+          component={SettingsNavigator} 
+          options={{
+            tabBarLabel: 'Settings',
+            tabBarIcon: () => (
+              <Ionicons name="settings-sharp" size={24} color='#53565A' />
+            ),
+            showIcon: true
+          }}
+        />
       </Tab.Navigator>
   )
 }

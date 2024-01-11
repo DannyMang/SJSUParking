@@ -1,8 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
 import TopBanner from '../components/TopBanner';
 import ProgressBar from '../components/ProgressBar';
+import openMap, { createOpenLink } from 'react-native-open-maps';
+
+// react native open map coordinates and search queries for garages
+const southGarage = { provider:'apple', query:'SJSU South Garage', latitude: 37.333258, longitude: -121.880903};
+const westGarage = { provider:'apple', query:'SJSU West Garage', latitude: 37.332394, longitude: -121.883009};
+const northGarage = { provider:'apple', query:'SJSU North Garage', latitude: 37.339353, longitude: -121.880779};
+const southCampusGarage = { provider:'apple', query:'SJSU South Campus Garage', latitude: 37.320667, longitude: -121.865401};
+
+// functions to open link to specific garages
+const onPressFunction = [
+  createOpenLink(southGarage),
+  createOpenLink(westGarage),
+  createOpenLink(northGarage),
+  createOpenLink(southCampusGarage),
+];
 
 const HomeScreen = () => {
   const [parkingData, setParkingData] = useState([]);
@@ -37,13 +51,15 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <TopBanner title="SJSU Parking" />
       <View style={styles.content}>
-        {parkingData.map((garage) => (
+        {parkingData.map((garage, index) => (
             <ProgressBar
+              onPressData={onPressFunction[index]}
               key={garage.name}
               label={addressToNameMapping[garage.name] || garage.name}
               initialProgress={parseFloat(garage.fullness)}
             />
           ))}
+       
       </View>
     </View>
   );
@@ -52,12 +68,14 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingBottom: 30,
   },
   content: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    
   },
 });
 
