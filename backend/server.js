@@ -6,6 +6,7 @@ const cheerio = require('cheerio');
 //find way to delete this later, lots of security issues with disabling SSL verification 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 const app = express();
+//Change
 const PORT = 3002; 
 
 app.use(express.json());
